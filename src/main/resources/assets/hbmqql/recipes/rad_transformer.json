@@ -1,0 +1,25 @@
+{
+  "type" : "minecraft:crafting_shapeless",
+
+  "ingredients":
+  [
+
+    {
+      "item" : "hbm:machine_converter_he_rf"
+    },
+
+    {
+      "item" : "hbm:machine_converter_rf_he"
+    }
+
+
+
+  ],
+
+  "result":
+  {
+    "item" :"hbmqql:rad_transformer",
+    "count": 16
+
+  }
+}
