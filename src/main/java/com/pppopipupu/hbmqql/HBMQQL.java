@@ -2,6 +2,8 @@ package com.pppopipupu.hbmqql;
 
 import com.hbm.handler.HazmatRegistry;
 import com.hbm.items.ModItems;
+
+
 import nc.init.NCArmor;
 import nc.radiation.RadArmor;
 import nc.recipe.vanilla.CraftingRecipeHandler;
@@ -81,10 +83,11 @@ public class HBMQQL {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        HazmatRegistry.registerHazmat(NCArmor.boots_hazmat,0.5);
-        HazmatRegistry.registerHazmat(NCArmor.chest_hazmat,0.75);
-        HazmatRegistry.registerHazmat(NCArmor.legs_hazmat,0.5);
-        HazmatRegistry.registerHazmat(NCArmor.helm_hazmat,0.5);
+        HazmatRegistry.registerHazmat(NCArmor.boots_hazmat,0.4);
+        HazmatRegistry.registerHazmat(NCArmor.chest_hazmat,0.7);
+        HazmatRegistry.registerHazmat(NCArmor.legs_hazmat,0.4);
+        HazmatRegistry.registerHazmat(NCArmor.helm_hazmat,0.4);
+
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent postEvent) {
@@ -95,7 +98,7 @@ public class HBMQQL {
             for (ItemStack stack : stacks) {
 
 
-                CraftingRecipeHandler.addShapelessArmorUpgradeRecipe(armorWithRadResistance(stack,HazmatRegistry.getResistance(stack)*20 ), stack, new ItemStack(rad_transformer, 1));
+                CraftingRecipeHandler.addShapelessArmorUpgradeRecipe(armorWithRadResistance(stack,((HazmatRegistry.getResistance(stack)*15)+ Math.pow(HazmatRegistry.getResistance(stack),3)/3) ), stack, new ItemStack(rad_transformer, 1));
                 }
             }
 
