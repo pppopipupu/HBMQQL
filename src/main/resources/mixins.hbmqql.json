@@ -1,0 +1,16 @@
+{
+    "compatibilityLevel": "JAVA_8",
+    "package": "com.pppopipupu.hbmqql.mixin",
+    "refmap": "mixins.hbmqql.remap.json",
+    "mixins": [
+        "MixinHazmatRegistry","MixinRadiationHelper"
+    ],
+    "required": true,
+    "target": "@env(DEFAULT)",
+    "minVersion": "0.8.5",
+    "injectors": {
+        "defaultRequire": 1
+    }
+
+
+}
