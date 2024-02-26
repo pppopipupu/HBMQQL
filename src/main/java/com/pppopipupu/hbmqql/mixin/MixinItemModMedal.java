@@ -10,6 +10,10 @@ import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.InjectionPoint;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = ItemModMedal.class,remap = false)
 public class MixinItemModMedal {
@@ -21,22 +25,16 @@ public class MixinItemModMedal {
      * @author
      * @reason
      */
-    @Overwrite
+    @Inject(method = "modUpdate",at = @At("HEAD"))
 
-    public void modUpdate(EntityLivingBase entity, ItemStack armor) {
+    public void modUpdate(EntityLivingBase entity, ItemStack armor, CallbackInfo ci) {
         if(!entity.world.isRemote) {
-            float rad = HbmLivingProps.getRadiation(entity);
+
             float nco_rad = (float) (RadiationHelper.getEntityRadiation(entity).getTotalRads());
             nco_rad -= minusRads;
-            rad -= minusRads;
-            HbmLivingProps.setRadiation(entity, Math.max(rad, 0));
+
             RadiationHelper.getEntityRadiation(entity).setTotalRads(Math.max(nco_rad,0),true);
-
-
-            if(entity instanceof EntityPlayer){
-                ContaminationUtil.neutronActivateInventory((EntityPlayer)entity, 0.0F, this.decayRate);
-                ((EntityPlayer)entity).inventoryContainer.detectAndSendChanges();
-            }
         }
+
     }
 }
