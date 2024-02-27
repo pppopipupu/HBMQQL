@@ -17,7 +17,7 @@ public class MixinHbmPotion {
     public void performEffect(EntityLivingBase entity, int level, CallbackInfo ci) {
         if (((HbmPotion)(Object)this) == radaway){
 
-            RadiationHelper.getEntityRadiation(entity).setTotalRads(Math.max( (RadiationHelper.getEntityRadiation(entity).getTotalRads())-(level+1)*0.08F,0),true);
+            RadiationHelper.getEntityRadiation(entity).setTotalRads(Math.max( (RadiationHelper.getEntityRadiation(entity).getTotalRads())-(level+1)*0.06F,0),true);
 
         }
     }
