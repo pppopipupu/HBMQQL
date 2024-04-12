@@ -3,6 +3,7 @@
   "package": "com.pppopipupu.hbmqql.mixin",
   "refmap": "mixins.hbmqql.remap.json",
   "mixins": [
+    "MixinCentrifugeRecipes",
     "MixinHazmatRegistry",
     "MixinHbmPotion",
     "MixinItemModMedal",
