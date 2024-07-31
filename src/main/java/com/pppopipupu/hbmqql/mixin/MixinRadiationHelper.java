@@ -1,8 +1,8 @@
 package com.pppopipupu.hbmqql.mixin;
 
 import com.hbm.handler.HazmatRegistry;
+
 import nc.capability.radiation.entity.IEntityRads;
-import nc.capability.radiation.source.IRadiationSource;
 import nc.radiation.RadiationHelper;
 import nc.util.NCMath;
 import net.minecraft.entity.EntityLivingBase;
@@ -15,7 +15,6 @@ import org.spongepowered.asm.mixin.Shadow;
 
 import static nc.config.NCConfig.radiation_rain_mult;
 import static nc.config.NCConfig.radiation_swim_mult;
-import static nc.radiation.RadiationHelper.getRadiationSource;
 
 
 @Mixin(value = RadiationHelper.class,remap = false)
