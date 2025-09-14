@@ -12,7 +12,12 @@ import java.util.List;
 码魂是很重要的
 2024/1/17
 */
-
+/*
+当时的我是傻逼，写一堆OverWrite，不会用mixinbooter引导，真的太铸币了
+不过那个NCO抗性转HBM确实不错，平方根除3是对的
+而且为啥我不用retroFG,莫名其妙的连runclient都不行
+2025/9/14
+*/
 
 public class LateMixin implements ILateMixinLoader{
 

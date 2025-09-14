@@ -22,7 +22,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '2.2'
+version = '3.0'
 group = 'com.pppopipupu.hbmqql' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'hbmqql'
 
@@ -70,7 +70,7 @@ dependencies {
     annotationProcessor 'org.ow2.asm:asm-debug-all:5.2'
     annotationProcessor 'com.google.guava:guava:32.1.2-jre'
     annotationProcessor 'com.google.code.gson:gson:2.8.9'
-    implementation "curse.maven:nuclearcraft-overhauled-336895:5446445"
+    implementation "curse.maven:nuclearcraft-overhauled-336895:6605808"
     // ForgeGradle:
     implementation ('zone.rong:mixinbooter:8.9') {
         transitive = false
